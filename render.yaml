@@ -2,13 +2,16 @@ services:
   - type: web
     name: furkan-portfolio
     env: python
-    buildCommand: "./build.sh"
-    startCommand: "gunicorn portfolio.wsgi:application"
+    plan: free
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: gunicorn portfolio.wsgi:application
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.18
       - key: DEBUG
-        value: False
+        value: false
       - key: SECRET_KEY
         generateValue: true
+      - key: DJANGO_SETTINGS_MODULE
+        value: portfolio.settings
     autoDeploy: true 
