@@ -14,7 +14,7 @@ html, body {
     width: 100vw;
     display: flex;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
 }
@@ -28,12 +28,16 @@ html, body {
     position: relative;
     overflow-y: auto;
     background-color: #1a1b1e;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px;
+    width: 100%;
 }
 
 /* Navigation Dots */
@@ -111,19 +115,28 @@ html, body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    padding: 0;
+}
+
+.hero .container {
+    max-width: 800px;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
     font-weight: 700;
 }
 
 .hero .lead {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 30px;
+    color: #3498db;
 }
 
 .scroll-hint {
@@ -147,11 +160,12 @@ html, body {
 
 /* Section Styles */
 section h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 40px;
     font-weight: 600;
     position: relative;
     padding-bottom: 15px;
+    text-align: left;
 }
 
 section h2:after {
@@ -163,6 +177,20 @@ section h2:after {
     height: 4px;
     background: linear-gradient(90deg, #343a40 0%, #495057 100%);
     border-radius: 2px;
+}
+
+.content-box {
+    background: #2c3034;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.content-box p {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #e0e0e0;
 }
 
 /* Skill Cards */
@@ -372,15 +400,37 @@ section h2:after {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .horizontal-scroll {
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
+    .section {
+        padding: 40px 0;
     }
 
-    .section {
-        min-height: 100vh;
-        padding: 80px 20px;
-        overflow-y: auto;
+    .container {
+        padding: 0 20px;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+
+    .content-box p {
+        font-size: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .lead {
+        font-size: 1.4rem;
+    }
+
+    .horizontal-scroll {
+        scroll-snap-type: x mandatory;
     }
 
     .projects-grid {
@@ -391,14 +441,6 @@ section h2:after {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 15px;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero .lead {
-        font-size: 1.4rem;
     }
 
     .nav-dots {
