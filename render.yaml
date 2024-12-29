@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: furkan-portfolio
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn portfolio.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: DEBUG
+        value: False
+      - key: SECRET_KEY
+        generateValue: true
+    autoDeploy: true 
