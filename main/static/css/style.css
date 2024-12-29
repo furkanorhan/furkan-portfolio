@@ -189,22 +189,14 @@ section h2:after {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .timeline-item {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     position: relative;
     padding-left: 30px;
-}
-
-.timeline-item:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: #343a40;
+    border-left: 2px solid #343a40;
 }
 
 .timeline-content {
@@ -212,17 +204,46 @@ section h2:after {
     padding: 25px;
     border-radius: 15px;
     position: relative;
+    margin-left: 15px;
 }
 
 .timeline-content:before {
     content: '';
     position: absolute;
-    left: -8px;
+    left: -23px;
     top: 20px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #343a40;
+    background: #3498db;
+    border: 3px solid #1a1b1e;
+}
+
+.timeline-content h3 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+}
+
+.timeline-content h4 {
+    color: #3498db;
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+}
+
+.timeline-content p {
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.timeline-content .date {
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 5px;
+    color: #3498db;
+    font-size: 0.9rem;
 }
 
 /* Project Cards */
@@ -388,5 +409,33 @@ section h2:after {
     .dot {
         width: 10px;
         height: 10px;
+    }
+
+    .timeline {
+        padding: 10px;
+    }
+
+    .timeline-item {
+        margin-bottom: 25px;
+        padding-left: 20px;
+    }
+
+    .timeline-content {
+        margin-left: 10px;
+        padding: 20px;
+    }
+
+    .timeline-content:before {
+        left: -18px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1rem;
     }
 } 
